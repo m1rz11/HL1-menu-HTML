@@ -1,7 +1,7 @@
 # HL1-menu-HTML
 A Half-Life WON main menu recreation in HTML.
 
-![Screenshot](https://i.imgur.com/yUhWyUA.png)
+[Try it out here](https://mirzi1.github.io/HL1-menu-HTML/)
 
 # Features:
 * Animated title
