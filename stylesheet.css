@@ -1,0 +1,282 @@
+/* don't mind the duct tape */
+
+html{
+	overflow-x:hidden;
+	height: 100%;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+body{
+	background-color: black;
+	background: url("bg.png");
+	background-size:cover;
+	font-family: Arial;
+}
+
+/* title text */
+#title1{
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	padding:20px 0px;
+	animation: move 4.6s infinite linear, blink 4.6s infinite linear, blinkblur 4.6s infinite linear;
+	transform:translateX(0px);
+	letter-spacing: 40px;
+	line-height: 1.4;
+}
+
+#title1 span{
+	letter-spacing: 10px;
+}
+
+/* title blurry text */
+#title1 #blink{
+	position: absolute;
+	font-size: 10px;
+	filter: blur(1px);
+	transform: scale(7) translateX(0px);
+	top: 65px;
+	animation: movescale 4.6s infinite linear, blink 4.6s infinite linear;
+	left: 400px;
+}
+
+/* menu button */
+#menu th{
+	color: #FFBA00;
+	padding-bottom:22px;
+	text-align: left;
+	width: 200px; 
+}
+
+/* menu button description */
+#menu td{
+	font-size: 15px;
+	color: #7F7F7F;
+	padding-bottom:22px;
+	vertical-align: bottom;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* links and buttons */
+a, button{
+	cursor: default;
+	color: #FFBA00;
+	text-decoration: none;
+	transition-duration: 1s;
+	font-family: Trebuchet MS;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* link hover */
+a:hover, button:hover{
+	color: #FFF94D;
+	text-shadow: 0px 0px 5px #FFBA00, 0px 0px 5px #FFBA00, 0px 0px 5px #FFBA00, 0px 0px 5px #FFBA00, 0px 0px 5px #FFBA00, 0px 0px 15px #FFBA00;
+	text-decoration: none;
+	transition-duration: 0.02s;
+}
+
+/* link active (clicked) */
+a:active, button:active{
+	color: #000;
+	text-decoration: none;
+	transition-duration: 0.02s;
+}
+
+/* fix for ugly blue links */
+button:focus{
+	outline:0;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.inactive{
+	pointer-events: none;
+	color: #646464;
+}
+
+/* message box container */
+#messagebox{
+	width:320px;
+	height:160px;
+	background-color: #383838;
+	border: 1px solid #646464;
+	position:fixed;
+	top: 200px;
+	left: calc(50% - 160px);
+	text-align: center;
+	color: #FFBA00;
+	display:none;
+	font-size: 16px;
+	box-shadow: 0px 3px 10px #000;
+}
+
+/* message box message */
+#messagebox th th{font-size: 18px;}
+
+/* message box link */
+#messagebox a, #messagebox button{
+	font-size: 16px;
+	font-family: Trebuchet MS;
+	font-weight: normal;
+}
+
+#messagebox #line1{font-size: 18px;}
+
+#serverbrowser{
+	width:650px;
+	background-color: #383838;
+	border: 1px solid #646464;
+	position:fixed;
+	top: 200px;
+	left: calc(50% - 325px);
+	color: #FFBA00;
+	font-size: 16px;
+	font-family: Trebuchet MS;
+	display:none;
+	box-shadow: 0px 3px 10px #000;
+}
+
+#serverbrowser .sb_name{
+	padding-left: 40px;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 25px;
+	text-shadow: 0px 2px 2px black;
+	column-width: 225px;
+	background-size: cover;
+}
+
+#serverbrowser tr{
+	height: 100px;
+}
+
+#serverbrowser .sb_info{
+	column-width: 200px;
+}
+
+#serverbrowser .sb_copyIP{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 40px;
+}
+
+/* inactive option */
+#serverbrowser .inactive{
+	display:none;
+}
+
+/* active option */
+#serverbrowser .active{
+	animation: activeblink 1s infinite linear;
+}
+
+/* css for mobile devices */
+@media screen and (max-width: 650px){
+	/* smaller title without and animation */
+	#title1{
+		font-size: 20px;
+		padding:0px 0px;
+		animation: none;
+	}
+	
+	/* disable blurry title */
+	#title1 span{display:none;}
+	
+	/* move message box higher */
+	#messagebox{top: 100px;}
+	#serverbrowser{
+		width: calc(100% - 10px);
+		top:70px;
+		left:0px;
+		margin: 5px;
+	}
+	#serverbrowser .sb_name{
+		font-size:17px;
+		column-width: 170px;
+		padding-left: 10px;
+	}
+	#serverbrowser .sb_info{
+		font-size:15px;
+	}
+	#serverbrowser .sb_copyIP{
+	font-weight: bold;
+	text-align: right;
+	padding-right: 10px;
+	}
+}
+
+/* responsive web stuff */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* animations */
+/* title animation */
+@keyframes move{
+	100%,0%{transform:translateX(-50px);}
+	27%,45%,94%{transform:translateX(50px);}
+	36%{transform:translateX(25px);}
+	81%{transform:translateX(0px);}
+}
+
+/* title scaled animation */
+@keyframes movescale{
+	100%,0%{transform:translateX(-50px) scale(7);}
+	27%,45%,94%{transform:translateX(50px) scale(7);}
+	36%{transform:translateX(25px) scale(7);}
+	81%{transform:translateX(0px) scale(7);}
+}
+
+/* blinking animation */
+@keyframes blink{
+	0%,100%,11%,13%,31%,33%,54%,56%,66%,68%,77%,79%,93%,95%,100%{text-shadow: none;}
+	12%,32%,55%,67%,78%,94%{text-shadow: 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF, 0px 0px 5px #FFF;}
+}
+
+/* blinking blur animation */
+@keyframes blinkblur{
+	0%,100%,11%,13%,31%,33%,54%,56%,66%,68%,77%,79%,93%,95%,100%{filter:blur(0px);}
+	12%,32%,55%,67%,78%,94%{filter:blur(5px);}
+}
+
+@keyframes activeblink{
+	0%, 100%{box-shadow: 0px 0px 5px #FFBA00;}
+	50%{box-shadow: 0px 0px 20px #FFBA00;}
+}

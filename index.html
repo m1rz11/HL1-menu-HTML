@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- META TAGS -->
+	<title>Half-Life</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- CSS -->
+	<!-- external stylesheet -->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	
+	<!-- JAVASCRIPT -->
+	<!-- alerts script -->
+	<script src="alerts.js"></script>
+	<!-- shortcut key script -->
+	<script src="key_shortcuts.js"></script>
+</head>
+	
+<body>
+	<!-- click sound -->
+	<audio id="click" src="click.mp3" preload="auto"></audio>
+	
+	<!-- website container -->
+	<div class="container">
+	
+		<!-- title with animation -->
+		<h1 id="title1">HλLF-LIFE<span id="blink">HλLF-LIFE</span></h1>
+		
+		<!-- menu contents -->
+		<table id="menu">
+			<tr>
+				<th><a class="inactive" href="" onclick="clickSound();">Inactive link</a></th>
+				<td>Uses "inactive" class</td>
+			</tr>
+			<tr>
+				<th><a href="https://www.half-life.com/" onclick="clickSound();"><u>A</u>ctive link</a></th>
+				<td>Redirects to https://www.half-life.com/</td>
+			</tr>
+			<tr>
+				<th><button onclick="showServerBrowser(); clickSound();"><u>M</u>ultiplayer</a></th>
+				<td>Server browser example</td>
+			</tr>
+			<tr>
+				<th><button onclick="showAlert();clickSound();">Alert <u>B</u>ox</button></th>
+				<td>Shows an alert box</td>
+			</tr>
+		</table>
+		
+		<!-- server browser -->
+		<table id="serverbrowser" cellspacing="0" cellpadding="0">
+			<tr style="background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(sb1.png);">
+				<td class="sb_name">Server 1 (Copy IP)</td>
+				<td class="sb_info">Server info is unavailable</td>
+				<td class="sb_copyIP"><button onclick="copyIP('127.0.0.1');clickSound();hideServerBrowser();">Copy IP</button></td>
+			</tr>
+			<tr style="background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(sb2.png);">
+				<td class="sb_name">Server 2 (Direct connect)</td>
+				<td class="sb_info">Server info is unavailable</td>
+				<td class="sb_copyIP"><a href="steam://connect/2.204.86.241:27015" onclick="clickSound();hideServerBrowser();">Connect</a></td>
+			</tr>
+			<!-- changing class="inactive" to class="active" displays the event option with a glow-->
+			<!-- activate for special occasions, this option glows when active -->
+			<tr class="active" style="background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(sb3.png);">
+				<td class="sb_name">Server 3 (Special)</td>
+				<td class="sb_info">Server info is unavailable</td>
+				<td class="sb_copyIP"><button onclick="copyIP('127.0.0.1');clickSound();hideServerBrowser();">Copy IP</button></td><!-- this td needs to be removed for the server browser to not break -->
+				<!-- <a href="steam://connect/" onclick="clickSound();hideServerBrowser();"><br>Connect</a></td> -->
+				<!-- Uncomment and remove </td> mentioned above if you want a direct connect button -->
+			</tr>
+		</table>
+		
+		<!-- message box -->
+		<table id="messagebox">
+			<!-- about -->
+			<!-- Most message box edits are now done in alerts.js -->
+			<tr>
+				<th id="line1">Line 1</th>
+			</tr>
+			<tr id="line2">
+				<th>Line 2</th>
+			</tr>
+			<tr>
+				<th id="githublink"><a href="https://github.com/mirzi1/HL1-menu-HTML" onclick="clickSound();">GitHub link</a></th>
+				<th id="copybutton"><button onclick="copyIP();clickSound();">Copy to clipboard</a></th>
+			</tr>
+			<tr>
+				<th id="okbutton"><button onclick="hideAlert();clickSound();"><br>Ok</a></th>
+			</tr>
+		</table>
+	
+		<!-- website container ends here -->
+	</div>
+</body>
